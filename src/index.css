@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base - Light Gray */
+  --background: 210 40% 98%; /* #F8FAFC */
+  --foreground: 222 47% 11%; /* #1E293B */
+
+  /* Primary - Deep Navy Blue */
+  --primary: 222 47% 11%; /* #1E293B */
+  --primary-foreground: 210 40% 98%;
+
+  /* Secondary - Muted Teal */
+  --secondary: 175 77% 26%; /* #0F766E */
+  --secondary-foreground: 210 40% 98%;
+
+  /* Accent - Soft Amber */
+  --accent: 38 92% 50%; /* #F59E0B */
+  --accent-foreground: 222 47% 11%;
+
+  /* Muted */
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  /* Card */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  /* Popover */
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Border */
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222 47% 11%;
+
+  --radius: 0.75rem;
+
+  /* Chart Colors for Recharts */
+  --chart-1: 175 77% 26%; /* Teal */
+  --chart-2: 38 92% 50%;  /* Amber */
+  --chart-3: 222 47% 11%; /* Navy */
+  --chart-4: 220 14% 96%; /* Gray */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Custom Heatmap Grid Styles */
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr); /* Approx weeks in a year */
+  gap: 4px;
+}
+
+.heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+}
+
+.heatmap-intensity-0 { background-color: #e2e8f0; }
+.heatmap-intensity-1 { background-color: #99f6e4; }
+.heatmap-intensity-2 { background-color: #5eead4; }
+.heatmap-intensity-3 { background-color: #2dd4bf; }
+.heatmap-intensity-4 { background-color: #0f766e; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
